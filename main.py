@@ -13,7 +13,7 @@ server_socket = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
 
 server_socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 
-server_socket.setblocking(False)
+
 
 
 # Binding Socket to IP address & Port
@@ -24,10 +24,6 @@ server_socket.listen(5)
 print(f"Listening on port {SERVER_PORT}")
 
 while True:
-    try:
         client_socket, client_address = server_socket.accept()
-        print(client_address)
         print(client_socket)
-    except:
-        time.sleep(1)
-        continue
+        print(client_address)
